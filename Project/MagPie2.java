@@ -10,6 +10,7 @@
  * @author Laurie White
  * @version April 2012
  *david is pretty
+ *i do not know how to code 
  */
 public class MagPie2
 {
