@@ -9,7 +9,7 @@
  * This version uses a nested if to handle default responses.
  * @author Laurie White
  * @version April 2012
- *hi kids
+ *david is pretty
  */
 public class MagPie2
 {
