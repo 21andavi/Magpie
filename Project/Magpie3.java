@@ -27,30 +27,7 @@ public class Magpie3
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
-		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
-			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		}
-		else
-		{
-			response = getRandomResponse();
-		}
-		return response;
-	}
+
 
 	/**
 	 * Search for one word in phrase. The search is not case
@@ -68,6 +45,46 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
+	public String getResponse(String statement)
+	{
+		String response = "";
+		//if (statement.indexOf("no") >= 0)
+		//{
+			//response = "Why so negative?";
+		//}
+		if (statement.indexOf("mother") >= 0
+				|| statement.indexOf("father") >= 0
+				|| statement.indexOf("sister") >= 0
+				|| statement.indexOf("brother") >= 0)
+		{
+			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("dog") >= 0 || statement.indexOf("cat") >= 0) {
+			response = "Tell me more about your pets";
+		}
+		else if (statement.indexOf("teacher") >= 0 || statement.indexOf("Lint") >= 0) {
+			response = "They sounds like a good teacher";
+		}
+		else if (statement.trim() == null) {
+			response = "Say something please";
+		}
+		else if (statement.indexOf("summer") >= 0) {
+			response = "Are you excited?";
+		}
+		else if (statement.indexOf("Zellers") >= 0) {
+			response = "Do you follow wrestling?";
+		}
+		else if (statement.indexOf("chatbot") >= 0) {
+			response = "That's what I am!";
+		}
+		//make a say something please fix into it
+		else
+		{
+			response = getRandomResponse();
+		}
+		return response;
+	}
+
 	private int findKeyword(String statement, String goal,
 			int startPos)
 	{
